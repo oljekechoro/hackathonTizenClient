@@ -6,6 +6,7 @@ body {
     padding: 0;
     background-color: #222222;
     color: #ffffff;
+    font-family: Arial;
 }
 .page {
     width: 100%;
@@ -14,7 +15,7 @@ body {
 }
 .contents {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
     text-align: center;
     -webkit-tap-highlight-color: transparent;
 }

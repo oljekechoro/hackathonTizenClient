@@ -1,4 +1,4 @@
-var SERVER_URL //= "http://192.168.10.152:80"; // ip-адрес raspberry pi
+var SERVER_URL //192.168.10.152; // ip-адрес raspberry pi
 var DELAY = 2000;//период обновления контента
 
 window.onload = function() {
