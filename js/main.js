@@ -1,5 +1,5 @@
-var SERVER_URL //192.168.10.152; // ip-адрес raspberry pi
-var DELAY = 2000;//период обновления контента
+var SERVER_URL;
+var DELAY = 2000;
 
 window.onload = function() {
     // TODO:: Do your initialization job
@@ -14,8 +14,6 @@ window.onload = function() {
     });
     setInterval(getFromPi, DELAY);
 };
-
-
 
 function onError(){
 	console.log("Что-то с сервером :(");
@@ -35,7 +33,7 @@ function show(data){
 //Предполагается, что малинка дает html-код(но не код целой странички)
 function getFromPi(){
 	$.ajax({
-		url: "http://"+SERVER_URL+":80/",
+		url: "http://"+SERVER_URL+":80/index.php",
 		type: "GET",
 		dataType: "text",
 		success: show,
