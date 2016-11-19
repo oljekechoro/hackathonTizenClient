@@ -26,14 +26,13 @@ function setIp(){
 }
 
 function show(data){
-	$("#field").empty();
-	$("#field").append(data);
+	window.location.replace("http://"+SERVER_URL+":5000/");
 }
 
 //Предполагается, что малинка дает html-код(но не код целой странички)
 function getFromPi(){
 	$.ajax({
-		url: "http://"+SERVER_URL+":80/index.php",
+		url: "http://"+SERVER_URL+":5000/",
 		type: "GET",
 		dataType: "text",
 		success: show,
