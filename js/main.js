@@ -28,8 +28,6 @@ function setIp(){
 function show(data){
 	window.location.replace("http://"+SERVER_URL+":5000/");
 }
-
-//Предполагается, что малинка дает html-код(но не код целой странички)
 function getFromPi(){
 	$.ajax({
 		url: "http://"+SERVER_URL+":5000/",
