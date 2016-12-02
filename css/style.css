@@ -15,7 +15,7 @@ body {
 }
 .contents {
     display: table-cell;
-    vertical-align: top;
+    vertical-align: middle;
     text-align: center;
     -webkit-tap-highlight-color: transparent;
 }

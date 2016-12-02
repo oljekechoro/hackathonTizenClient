@@ -1,10 +1,6 @@
-var SERVER_URL;
-var DELAY = 2000;
+var SERVER_URL; //Адрес сервера (Raspberry)
 
 window.onload = function() {
-    // TODO:: Do your initialization job
-
-    // add eventListener for tizenhwkey
     document.addEventListener('tizenhwkey', function(e) {
         if (e.keyName === "back") {
             try {
@@ -12,28 +8,13 @@ window.onload = function() {
             } catch (ignore) {}
         }
     });
-    setInterval(getFromPi, DELAY);
 };
 
-function onError(){
-	console.log("Что-то с сервером :(");
-}
-
 function setIp(){
-	var a = $("#ip").val();
-	SERVER_URL = a;
-	getFromPi();
+	//записываем адрес Raspberry, извлекая его из тега <input> с id="ip"
+	SERVER_URL = $("#ip").val(); 
+	//и перенаправляемся на страничку сервера
+	window.location.replace("http://" + SERVER_URL + ":5000/");
 }
 
-function show(data){
-	window.location.replace("http://"+SERVER_URL+":5000/");
-}
-function getFromPi(){
-	$.ajax({
-		url: "http://"+SERVER_URL+":5000/",
-		type: "GET",
-		dataType: "text",
-		success: show,
-		error: onError 
-	})
-}
+
